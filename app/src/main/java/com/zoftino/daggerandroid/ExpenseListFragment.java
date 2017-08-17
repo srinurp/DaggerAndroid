@@ -20,9 +20,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import dagger.android.support.AndroidSupportInjection;
-
-public class ExpenseListFragment extends LifecycleFragment {
+public class ExpenseListFragment extends LifecycleFragment implements DaggerInjectable{
     @Inject
     ExpenseDAO expenseDAO;
 
@@ -39,7 +37,6 @@ public class ExpenseListFragment extends LifecycleFragment {
     }
     @Override
     public void onAttach(Context context) {
-        AndroidSupportInjection.inject(this);
         super.onAttach(context);
     }
     @Override

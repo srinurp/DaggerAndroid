@@ -19,9 +19,7 @@ import java.util.concurrent.Executor;
 
 import javax.inject.Inject;
 
-import dagger.android.support.AndroidSupportInjection;
-
-public class AddExpenseFragment extends Fragment {
+public class AddExpenseFragment extends Fragment implements DaggerInjectable{
     @Inject
     ExpenseDAO expenseDAO;
 
@@ -50,7 +48,6 @@ public class AddExpenseFragment extends Fragment {
     }
     @Override
     public void onAttach(Context context) {
-        AndroidSupportInjection.inject(this);
         super.onAttach(context);
     }
     public void addExpense(View view){

@@ -3,7 +3,7 @@ package com.zoftino.daggerandroid;
 import android.app.Activity;
 import android.app.Application;
 
-import com.zoftino.daggerandroid.di.DaggerAppComponent;
+import com.zoftino.daggerandroid.di.DaggerAndroidInjector;
 
 import javax.inject.Inject;
 
@@ -17,12 +17,8 @@ public class ExpenseApplication extends Application implements HasActivityInject
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent
-                .builder()
-                .application(this)
-                .build()
-                .inject(this);
 
+        DaggerAndroidInjector.initialize(this);
     }
 
     @Override
